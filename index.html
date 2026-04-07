@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meta Ads CRM Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest/dist/apexcharts.min.js"></script>
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/pt_BR/fbevents.js');fetch('/api/meta/config-status').then(res=>res.json()).then(config=>{if(config&&window.fbq&&config.pixelId){fbq('init',config.pixelId);fbq('track','ViewContent');}}).catch(err=>console.warn('Pixel carregado com sucesso'));
+  </script>
+</head>
+<body>
+  <div class="shell">
+    <!-- BACKGROUND -->
+    <div class="bg-mesh"></div>
+    
+    <main class="content">
+      <!-- HEADER -->
+      <header class="topbar">
+        <div class="header-left">
+          <div class="brand">
+            <div class="brand-icon">⬢</div>
+            <div>
+              <h1>Meta Ads CRM</h1>
+              <p>Command Center</p>
+            </div>
+          </div>
+        </div>
+        <div class="header-right">
+          <input id="clientName" class="input" placeholder="Cliente..." />
+          <button id="btnDownloadPdf" class="btn btn-primary">PDF</button>
+        </div>
+      </header>
+
+      <!-- ACTIONS BAR -->
+      <section class="quick-actions">
+        <button id="btnTestConnection" class="btn btn-action">→ CONECTAR</button>
+        <button id="btnSyncCampaigns" class="btn btn-action">⟳ CAMPANHAS</button>
+        <button id="btnSyncLeads" class="btn btn-action">◈ LEADS</button>
+        <button id="btnRefreshDashboard" class="btn btn-action">⟲ REFRESH</button>
+      </section>
+
+      <!-- STRATEGIC KPI PANEL -->
+      <section class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-prefix">LEADS</div>
+          <strong class="kpi-value" id="metricLeads">0</strong>
+          <div class="kpi-bar"></div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-prefix">CAMPANHA</div>
+          <strong class="kpi-value" id="metricCampaigns">0</strong>
+          <div class="kpi-bar"></div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-prefix">SPEND</div>
+          <strong class="kpi-value" id="metricSpend">R$ 0</strong>
+          <div class="kpi-bar"></div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-prefix">CPL</div>
+          <strong class="kpi-value" id="metricCpl">R$ 0</strong>
+          <div class="kpi-bar"></div>
+        </div>
+      </section>
+
+      <!-- ANALYTICS GRID -->
+      <section class="charts-grid">
+        <article class="chart-panel">
+          <div class="panel-header">Spend Distribution</div>
+          <div id="chartSpend" style="height: 280px;"></div>
+        </article>
+
+        <article class="chart-panel">
+          <div class="panel-header">Cost per Lead</div>
+          <div id="chartCPL" style="height: 280px;"></div>
+        </article>
+
+        <article class="chart-panel">
+          <div class="panel-header">Lead Generation</div>
+          <div id="chartLeads" style="height: 280px;"></div>
+        </article>
+
+        <article class="chart-panel status-card">
+          <div class="panel-header">System Status</div>
+          <div id="statusBox" class="status-grid">
+            <div class="status-line">
+              <span>API</span>
+              <div class="status-dot" id="statusAPI"></div>
+            </div>
+            <div class="status-line">
+              <span>DATABASE</span>
+              <div class="status-dot" id="statusDB"></div>
+            </div>
+            <div class="status-line">
+              <span>META</span>
+              <div class="status-dot" id="statusMeta"></div>
+            </div>
+            <div class="status-line">
+              <span>PIXEL</span>
+              <div class="status-dot" id="statusPixel"></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- TACTICAL TABLES -->
+      <section class="tables-section">
+        <article class="table-panel">
+          <div class="table-header">Campaigns</div>
+          <table>
+            <thead>
+              <tr>
+                <th>CAMPAIGN</th>
+                <th>STATUS</th>
+                <th>IMPR.</th>
+                <th>LEADS</th>
+                <th>SPEND</th>
+                <th>CPL</th>
+              </tr>
+            </thead>
+            <tbody id="campaignTableBody">
+              <tr><td colspan="6" class="empty">[ SINCRONIZE CAMPAIGNS ]</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="table-panel">
+          <div class="table-header">Leads</div>
+          <table>
+            <thead>
+              <tr>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>PHONE</th>
+                <th>CAMPAIGN</th>
+                <th>SCORE</th>
+                <th>DATE</th>
+              </tr>
+            </thead>
+            <tbody id="leadTableBody">
+              <tr><td colspan="6" class="empty">[ SINCRONIZE LEADS ]</td></tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <!-- EVENT LOG -->
+      <section class="logs-section">
+        <div class="logs-header">Activity Log</div>
+        <div class="logs" id="syncLogs">
+          <div class="log-empty">[$ waiting for events...]</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./assets/js/app.js"></script>
+</body>
+</html>

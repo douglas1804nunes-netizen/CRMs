@@ -1,0 +1,25 @@
+HTTP/1.1 400 Bad Request
+debug-link: https://www.meta.com/debug/?mid=1b58965a90b35b0e1d734ce192a458f9
+error-mid: 1b58965a90b35b0e1d734ce192a458f9
+Vary: Origin
+Access-Control-Allow-Origin: *
+x-fb-aed: 802
+Content-Type: application/json; charset=UTF-8
+WWW-Authenticate: OAuth "Facebook Platform" "invalid_request" "Unsupported post request. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api"
+facebook-api-version: v25.0
+Strict-Transport-Security: max-age=15552000; preload
+Pragma: no-cache
+Cache-Control: no-store
+Expires: Sat, 01 Jan 2000 00:00:00 GMT
+x-fb-request-id: AGZguYmxOsMB5pjEyZ2GmxH
+x-fb-trace-id: B8LWn9qqA6l
+x-fb-rev: 1036694818
+X-FB-Debug: eXGBrCOycrU5XRxBoMW2DCFGWEZJt7x4UHlJKB8dbAPVJMG8g3gDdEwJGuLyK2J1P5LuUqSdI9mB7WF8Pfskrg==
+Date: Sun, 05 Apr 2026 14:11:17 GMT
+Proxy-Status: http_request_error; e_fb_vipaddr="AcNro_ytny7uYmZhGrzNqw-R41famIbHasPyo8ZOzs3KUUql6YsdgFRf5CHC-DJV_aczOD56cgeGh3iUogLFccbtvmModMiNgwwV"; e_clientaddr="AcNy68yMiVvF2jstERmFNxF6UM9Mnx4FO0uP-jRqKlDQwYUTTq9JEGaLZiV0E836DghWdOpa2AW7g_YWvXmr6Me4xVdB1AZJGY7wPOohu0iFmBJDKw"; e_upip="AcO84BBDHcIONlnkSyQ-_FZGF-M_zlJ7A9UIA0g-YY9MsLWiu73snoJxOWVKbv5xxJG8xSdEUY82SpidqJtgQR_IJ9kw0c7secodkya2HoY"; e_fb_zone="AcPkQB3vweb2F_uWPvD-I7HKcWwn1_Ql06dkpJPSh3-6v0QW-nQ-AeDSpSef_fhz"; e_fb_twtaskhandle="AcNxC9pYXWBz2Ll9VnTSdp3qkxnrBP-L6Dt_WQzCqhDpsKESBWy5KWyzBRnX12FDVba6O3woHFtADebDIU_7TkpCAi_J29kkv7-0k7WCvVlzTeY"; e_proxy="AcObsonqo-JqSj-HTBzdrpLFxYh4WqtMjPoXbmhq85qS78mLn18hduspvUCENn962fZSTStHEGLn5q3qmcis", http_request_error; e_fb_vipaddr="AcPe4sig3xKpBQudR2c9xD9Cv19uyIXAQaAIPJ7N4VqVBaoYWR5Yk95v0-K2Rn0Otrtu9wx4GLylTkUnUeuSh6ho5gAEPfLw"; e_clientaddr="AcP5Bw_RHrkqSKr7VOTwFXv8YDEYYHi31d8uu-oqDqHZC8akWe1Zr88uJnp1i5Hiz_xFJ0S5jh8iePaL-N3X1Q-2Jc3RfYlItvJ0Di8a1zzDliJlC3A34H8"; e_upip="AcPY3Wav_Ff0YHsKCrPmB39j6WlCQUirZenHCE_ibrQgE58D1Ea5aCWY6J2ut323ArTCDpSo8gUi3lZwSYYVQpUg6pHt8bJ3NBLX"; e_fb_zone="AcNQUs9tBaZK2oY8z-yyqB40cJsmR5wvpkuCaUrDbxviKgCbQes9P2PzoZOVsA"; e_fb_twtaskhandle="AcN1qD0WS5tH_MUMmIA-ZAquTmmF7OBK3dgmbCEH38f4f4afKdoNyME0ZCfAFjBw-0yNzzjr-m6bAil1vUdJ7bI0iB2XgveItCM"; e_proxy="AcOAXq5voKTuG4ZdMjlZJtR4DY098xI2AMC6j7IFsI_wrMkf6oI0qVDj4JewtRAdZqpuhSKHFLHTn6w"
+X-FB-Connection-Quality: EXCELLENT; q=0.9, rtt=32, rtx=0, c=10, mss=1392, tbw=4465, tp=-1, tpl=-1, uplat=129, ullat=0
+Alt-Svc: h3=":443"; ma=86400
+Connection: keep-alive
+Content-Length: 242
+
+{"error":{"message":"Unsupported post request. Please read the Graph API documentation at https:\/\/developers.facebook.com\/docs\/graph-api","type":"GraphMethodException","code":100,"error_subcode":33,"fbtrace_id":"AGZguYmxOsMB5pjEyZ2GmxH"}}
